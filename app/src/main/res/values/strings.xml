@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">AppGameBall02</string>
+    <string name="app_name">AppGameBall</string>
+    <string name="touches">Касаний : %d</string>
+    <string name="points">Очки : %d</string>
+    <string name="timer">Таймер : %d</string>
 </resources>
