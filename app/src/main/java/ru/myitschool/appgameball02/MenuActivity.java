@@ -7,8 +7,7 @@ import android.view.View;
 
 public class MenuActivity extends Activity {
 
-    //объект нужен для открытия новых активностей и передачи между ними данных
-    private Intent intent;
+    private Intent intentNewGame;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +19,8 @@ public class MenuActivity extends Activity {
        switch (view.getId()){
            case R.id.btn_new_game:
                //окно начала игры
-               intent = new Intent(this, MainActivity.class);
-               startActivity(intent);
+               intentNewGame = new Intent(this, MainActivity.class);
+               startActivity(intentNewGame);
                break;
            case R.id.btn_continue_game:
                //продолжить игру

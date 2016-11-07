@@ -22,11 +22,17 @@
             android:layout_weight="1"/>
 
         <TextView
-            android:id="@+id/txt_score"
+            android:id="@+id/text_score"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:text="Кол-во очков : "
+            android:text="Очки : "
             android:layout_weight="1"/>
 
+        <TextView
+            android:id="@+id/text_touch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Касаний : "
+            android:layout_weight="1"/>
     </LinearLayout>
 </RelativeLayout>
