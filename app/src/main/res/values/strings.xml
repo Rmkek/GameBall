@@ -1,6 +1,14 @@
 <resources>
-    <string name="app_name">AppGameBall</string>
+    <string name="app_name">GameBall</string>
+
     <string name="touches">Касаний : %d</string>
     <string name="points">Очки : %d</string>
     <string name="timer">Таймер : %d</string>
+    <string name="level">УРОВЕНЬ %d</string>
+
+    <string name="end_game_points">Очки: %d</string>
+    <string name="end_game_touches">Касаний: %d</string>
+    <string name="end_game_time">Время: %d секунд</string>
+    <string name="end_game_restart">Играть ещё!</string>
+    <string name="end_game_level">Уровень: %d</string>
 </resources>

@@ -23,8 +23,7 @@ public class MenuActivity extends Activity {
                startActivity(intentNewGame);
                break;
            case R.id.btn_continue_game:
-               //продолжить игру
-
+                //TODO: continue game.
                break;
            case R.id.btn_exit:
                //выход из игры
