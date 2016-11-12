@@ -26,8 +26,7 @@ public class MenuActivity extends Activity {
                 //TODO: continue game.
                break;
            case R.id.btn_exit:
-               //выход из игры
-               finish();
+               finishAffinity();
                break;
        }
     }
