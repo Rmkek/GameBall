@@ -79,6 +79,7 @@ class Ball {
         image.getLayoutParams().width = ballSize;
         image.getLayoutParams().height = ballSize;
         image.setOnClickListener(ballClick);
+        //TODO: Add rotation animation.
 
         this.speedX = random.nextInt(endSpeed - beginSpeed) + beginSpeed + 1;
         this.speedY = random.nextInt(endSpeed - beginSpeed) + beginSpeed + 1; // +beginSpeed
@@ -96,7 +97,7 @@ class Ball {
 
     void move(){
         if (x < 0 || x >= screenW - ballSize) {
-        speedX = -speedX - random.nextInt(1); //todo: fixme
+        speedX = -speedX - random.nextInt(1);
         }
 
         if (y < 0 || y >= screenH - ballSize) {

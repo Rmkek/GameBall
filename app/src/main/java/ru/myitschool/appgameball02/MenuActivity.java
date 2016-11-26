@@ -7,7 +7,7 @@ import android.view.View;
 
 public class MenuActivity extends Activity {
 
-    private Intent intentNewGame;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,14 +19,18 @@ public class MenuActivity extends Activity {
        switch (view.getId()){
            case R.id.btn_new_game:
                //окно начала игры
-               intentNewGame = new Intent(this, MainActivity.class);
-               startActivity(intentNewGame);
+               intent = new Intent(this, MainActivity.class);
+               startActivity(intent);
                break;
            case R.id.btn_continue_game:
                 //TODO: continue game.
                break;
            case R.id.btn_exit:
                finishAffinity();
+               break;
+           case R.id.btn_highscores:
+               intent = new Intent(this, HighscoreActivity.class);
+               startActivity(intent);
                break;
        }
     }

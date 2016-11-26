@@ -1,7 +1,9 @@
 package ru.myitschool.appgameball02;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.CountDownTimer;
@@ -44,7 +46,8 @@ public class MainActivity extends Activity {
 
     private float endSpeed;
 
-    private MediaPlayer mediaPlayer;
+    private MediaPlayer mediaPlayer; //TODO: rewrite with SoundPool.
+
 
     public static synchronized void updateScore(MainActivity activity, int amount) {
         Ball.points += amount;
@@ -70,6 +73,8 @@ public class MainActivity extends Activity {
         }
         return false;
     }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,6 +125,7 @@ public class MainActivity extends Activity {
     @Override
     public void onBackPressed() {
         intent = new Intent(MainActivity.this, MenuActivity.class);
+        timer.cancel();
         startActivity(intent);
         finish();
     }
@@ -147,7 +153,7 @@ public class MainActivity extends Activity {
                 countBalls += 0.25;
                 createBalls();
 
-                updateScore(MainActivity.this, (int) l / 1000); //Not wasted time gets into points.
+                updateScore(MainActivity.this, ((int) l / 1000 / 2)); //Not wasted time gets into points.
 
                 startSpeed += 0.35;
                 endSpeed += 0.4;
@@ -155,31 +161,31 @@ public class MainActivity extends Activity {
                 iLevel++;
 
                 switch (iLevel) {
-                    case 10:
+                    case 5:
                         Ball.changeParticle(R.drawable.star_red);
                         releaseAndPlayMedia();
                         break;
-                    case 20:
+                    case 10:
                         Ball.changeParticle(R.drawable.star_cyan);
                         releaseAndPlayMedia();
                         break;
-                    case 30:
+                    case 15:
                         Ball.changeParticle(R.drawable.star_green);
                         releaseAndPlayMedia();
                         break;
-                    case 40:
+                    case 20:
                         Ball.changeParticle(R.drawable.star_orange);
                         mediaPlayer.start();
                         break;
-                    case 50:
+                    case 25:
                         Ball.changeParticle(R.drawable.star_purple);
                         mediaPlayer.start();
                         break;
-                    case 60:
+                    case 30:
                         Ball.changeParticle(R.drawable.star_yellow);
                         mediaPlayer.start();
                         break;
-                    case 70:
+                    case 35:
                         Ball.changeParticle(R.drawable.confeti2);
                         mediaPlayer.start();
                         break;
@@ -199,12 +205,12 @@ public class MainActivity extends Activity {
         @Override
         public void onFinish() {
             intent = new Intent(MainActivity.this, EndGameActivity.class);
-            intent.putExtra("points", Ball.points - countTouch / 5);
+            intent.putExtra("points", Ball.points);
             intent.putExtra("clicks", countTouch);
             intent.putExtra("level", iLevel);
 
             if (iLevel == 1 && (time >= 4000 && time <= 11000)) {
-                intent.putExtra("time", 11L); // FIXME: 09.11.2016 Bad practice.
+                intent.putExtra("time", 11L); // FIXME: Если время <= 11000 миллисекунд, то оно подсчитывается таймером неправильно.
             } else {
                 intent.putExtra("time", time / 1000);
             }

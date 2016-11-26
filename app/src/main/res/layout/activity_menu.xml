@@ -20,6 +20,14 @@
         android:onClick="onClick"/>
 
     <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_highscores"
+        android:onClick="onClick"
+        android:text="Лучший счёт"
+        />
+
+    <Button
         android:id="@+id/btn_exit"
         android:layout_width="250dp"
         android:layout_height="wrap_content"

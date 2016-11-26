@@ -9,6 +9,13 @@
     <string name="end_game_points">Очки: %d</string>
     <string name="end_game_touches">Промахов: %d</string>
     <string name="end_game_time">Время: %d секунд</string>
-    <string name="end_game_restart">Играть ещё!</string>
     <string name="end_game_level">Уровень: %d</string>
+    <string name="end_game_restart">Играть ещё!</string>
+
+    <string name="highscore_text">Лучший счёт:</string>
+    <string name="highscore_points">Очки: %d</string>
+    <string name="highscore_clicks">Промахов: %d</string>
+    <string name="highscore_time">Время: %d секунд</string>
+    <string name="highscore_level">Уровень: %d</string>
+
 </resources>
